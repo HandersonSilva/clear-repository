@@ -1,14 +1,14 @@
 import subprocess
 
 # Run the git command and capture the output
-command = "git branch --merged main"
+command = "git branch --no-merged main"
 process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 stdout, stderr = process.communicate()
 
 # Decode the output and split it into a list of branches
-merged_branches = stdout.decode().split()
+unmerged_branches = stdout.decode().split()
 
 # Print the list of branches
-print("Merged branches in master:")
-for branch in merged_branches:
+print("Unmerged branches in master:")
+for branch in unmerged_branches:
     print(branch)
