@@ -1,7 +1,7 @@
 import subprocess
 
 # Run the git command and capture the output
-command = "git branch --merged master"
+command = "git branch --merged"
 process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 stdout, stderr = process.communicate()
 
